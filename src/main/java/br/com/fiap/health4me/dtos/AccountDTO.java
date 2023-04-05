@@ -1,32 +1,30 @@
-package br.com.fiap.health4me.models;
+package br.com.fiap.health4me.dtos;
 
 import java.io.Serializable;
 import java.util.UUID;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
-@Entity
-@Table(name = "tb_account")
-public class Account implements Serializable {
+public class AccountDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(nullable = false, unique = true)
+    @Email(message = "E-mail is not valid.")
+    @NotBlank
     private String email;
+
+    @Size(min = 8, max = 255, message = "Password must contain more than 8 digits.")
+    @NotBlank
     private String password;
 
-    public Account() {
+    public AccountDTO() {
     }
 
-    public Account(UUID id, String email, String password) {
+    public AccountDTO(UUID id, @Email(message = "E-mail is not valid.") @NotBlank String email,
+            @Size(min = 8, max = 255, message = "Password must contain more than 8 digits.") @NotBlank String password) {
         this.id = id;
         this.email = email;
         this.password = password;
