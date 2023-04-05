@@ -1,6 +1,6 @@
 package br.com.fiap.health4me.mappers;
 
-import java.util.Set;
+import java.util.List;
 
 import org.mapstruct.Mapper;
 
@@ -14,5 +14,5 @@ public interface AccountMapper {
 
     AccountDTO entityToDTO(Account account);
 
-    Set<AccountDTO> entityListToDTOList(Set<Account> accounts);
+    List<AccountDTO> entityListToDTOList(List<Account> accounts);
 }

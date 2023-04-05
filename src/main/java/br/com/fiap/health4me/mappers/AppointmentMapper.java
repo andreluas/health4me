@@ -1,6 +1,6 @@
 package br.com.fiap.health4me.mappers;
 
-import java.util.Set;
+import java.util.List;
 
 import org.mapstruct.Mapper;
 
@@ -14,5 +14,5 @@ public interface AppointmentMapper {
 
     AppointmentDTO entityToDTO(Appointment Appointment);
 
-    Set<AppointmentDTO> entityListToDTOList(Set<Appointment> Appointments);
+    List<AppointmentDTO> entityListToDTOList(List<Appointment> Appointments);
 }

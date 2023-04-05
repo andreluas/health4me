@@ -1,6 +1,6 @@
 package br.com.fiap.health4me.mappers;
 
-import java.util.Set;
+import java.util.List;
 
 import org.mapstruct.Mapper;
 
@@ -14,5 +14,5 @@ public interface RegisterMapper {
 
     RegisterDTO entityToDTO(Register Register);
 
-    Set<RegisterDTO> entityListToDTOList(Set<Register> Registers);
+    List<RegisterDTO> entityListToDTOList(List<Register> Registers);
 }
