@@ -1,8 +1,11 @@
 package br.com.fiap.health4me.dtos;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
+import br.com.fiap.health4me.models.Role;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -19,6 +22,7 @@ public class AccountDTO implements Serializable {
     @Size(min = 8, max = 255, message = "Password must contain more than 8 digits.")
     @NotBlank
     private String password;
+    private Set<Role> roles = new HashSet<>();
 
     public AccountDTO() {
     }
@@ -52,6 +56,14 @@ public class AccountDTO implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 
 }
