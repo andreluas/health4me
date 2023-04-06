@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "43e3a53c-c40d-4c51-abb2-2a36ac4591d2",
+		"name": "health4me",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16697346"
+	},
+	"item": [
+		{
+			"name": "Create Account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"teste@gmail.com\",\n    \"password\": \"123456789\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/acc/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"acc",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cpf\": \"16162440702\",\n    \"phone\": \"975833274\",\n    \"email\": \"teste@gmail.com\",\n    \"brithdate\": \"1990-10-10\",\n    \"name\": \"andre\",\n    \"lastName\": \"almeida\",\n    \"occupation\": \"developer\",\n    \"state\": \"rj\",\n    \"city\": \"teresopolis\",\n    \"address\": \"endereco, 10\",\n    \"smoke\": \"false\",\n    \"drink\": \"false\",\n    \"workout\": \"true\",\n    \"observation\": \"obs\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/reg/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"reg",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register a Appointment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"reasonForAppointment\": \"Fortes dores de cabeca\",\n    \"register\": \"teste@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/app/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"app",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Register by Email",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cpf\": \"16162440702\",\n    \"phone\": \"975833274\",\n    \"email\": \"teste@gmail.com\",\n    \"brithdate\": \"1990-10-10\",\n    \"name\": \"andre\",\n    \"lastName\": \"almeida\",\n    \"occupation\": \"developer\",\n    \"state\": \"rj\",\n    \"city\": \"teresopolis\",\n    \"address\": \"endereco, 10\",\n    \"smoke\": \"false\",\n    \"drink\": \"false\",\n    \"workout\": \"true\",\n    \"observation\": \"obs\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/reg/teste@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"reg",
+						"teste@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Appointment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cpf\": \"16162440702\",\n    \"phone\": \"975833274\",\n    \"email\": \"teste@gmail.com\",\n    \"brithdate\": \"1990-10-10\",\n    \"name\": \"andre\",\n    \"lastName\": \"almeida\",\n    \"occupation\": \"developer\",\n    \"state\": \"rj\",\n    \"city\": \"teresopolis\",\n    \"address\": \"endereco, 10\",\n    \"smoke\": \"false\",\n    \"drink\": \"false\",\n    \"workout\": \"true\",\n    \"observation\": \"obs\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/app/teste@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"app",
+						"teste@gmail.com"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
