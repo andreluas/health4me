@@ -1,6 +1,7 @@
 package br.com.fiap.health4me.dtos;
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.Set;
 import java.util.UUID;
@@ -29,9 +30,7 @@ public class RegisterDTO implements Serializable {
     @NotBlank
     private String email;
 
-    @Future(message = "Brithdate cannot be a future date.")
-    @NotBlank
-    private Timestamp brithdate;
+    private Date brithdate;
 
     @NotBlank
     private String name;
@@ -54,7 +53,7 @@ public class RegisterDTO implements Serializable {
     }
 
     public RegisterDTO(UUID id, @CPF @NotBlank String cpf, @NotBlank String phone, @Email @NotBlank String email,
-            @Future(message = "Brithdate cannot be a future date.") @NotBlank Timestamp brithdate,
+            @Future(message = "Brithdate cannot be a future date.") @NotBlank Date brithdate,
             @NotBlank String name, @NotBlank String lastName, String occupation, String state, String city,
             String address, boolean smoke, boolean drink, boolean workout, String observation, Account account,
             Set<Appointment> appointments) {
@@ -109,11 +108,11 @@ public class RegisterDTO implements Serializable {
         this.email = email;
     }
 
-    public Timestamp getBrithdate() {
+    public Date getBrithdate() {
         return brithdate;
     }
 
-    public void setBrithdate(Timestamp brithdate) {
+    public void setBrithdate(Date brithdate) {
         this.brithdate = brithdate;
     }
 
