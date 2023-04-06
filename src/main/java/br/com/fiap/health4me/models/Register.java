@@ -1,16 +1,15 @@
 package br.com.fiap.health4me.models;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
-import java.util.Date;
+import java.sql.Date;
 import java.util.Set;
 import java.util.UUID;
 
 import org.hibernate.validator.constraints.br.CPF;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -40,7 +39,7 @@ public class Register implements Serializable {
 
     private String name;
     private String lastName;
-    private Timestamp brithdate;
+    private Date brithdate;
     private String occupation;
     private String state;
     private String city;
@@ -50,17 +49,17 @@ public class Register implements Serializable {
     private boolean workout;
     private String observation;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "account_id", referencedColumnName = "id")
     private Account account;
 
-    @OneToMany(mappedBy = "register")
+    @OneToMany(mappedBy = "register", fetch = FetchType.EAGER)
     private Set<Appointment> appointments;
 
     public Register() {
     }
 
-    public Register(UUID id, @CPF String cpf, String phone, String email, String name, String lastName, Timestamp brithdate,
+    public Register(UUID id, @CPF String cpf, String phone, String email, String name, String lastName, Date brithdate,
             String occupation, String state, String city, String address, boolean smoke, boolean drink, boolean workout,
             String observation, Account account, Set<Appointment> appointments) {
         this.id = id;
@@ -134,7 +133,7 @@ public class Register implements Serializable {
         return brithdate;
     }
 
-    public void setBrithdate(Timestamp brithdate) {
+    public void setBrithdate(Date brithdate) {
         this.brithdate = brithdate;
     }
 
