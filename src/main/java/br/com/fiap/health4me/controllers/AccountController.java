@@ -15,13 +15,13 @@ import br.com.fiap.health4me.services.AccountService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping(value = "/api/v1")
+@RequestMapping(value = "/api/v1/acc")
 public class AccountController {
 
     @Autowired
     private AccountService service;
 
-    @PostMapping
+    @PostMapping(value = "/create")
     public ResponseEntity<AccountDTO> insert(@RequestBody @Valid AccountDTO dto) {
         AccountDTO accountDTO = service.insert(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(accountDTO.getId())
